@@ -245,11 +245,11 @@
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Sungjae Shin</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Sungjae Shin</a>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Wanhee Kim</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Wanhee Kim</a>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Alvin Jinsung Choi</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Alvin Jinsung Choi</a>,</span>
                     <span class="author-block">
                       <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Hyun Myung</a>
                   </span>
@@ -257,9 +257,8 @@
 
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
+                    <span class="author-block">Korea Advanced Institute of Science and Technology<br>ICCAS 2025 (Best Paper Award)</span>
                     <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -275,17 +274,6 @@
                       </a>
                     </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
                     <a href="https://github.com/YOUR REPO HERE" target="_blank"
@@ -298,7 +286,7 @@
                 </span>
 
                 <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -306,7 +294,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
@@ -315,24 +303,6 @@
   </div>
 </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -343,7 +313,7 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            This paper presents the Gaussian splatting database (GSDB), a database construction pipeline for Gaussian splatting map-based visual localization. GSDB consists of three stages: (1) View filtering using pixel-wise gradient variance and frustum constraints to remove visually uninformative views; (2) Covisibility graph construction by analyzing spatial overlaps between frustums of among viewpoints; and (3) Viewpoint ranking using perceptual quality (BRISQUE) and structural reliability (Edge-Aware Uncertainty Concentration, EAUC) to select representative views from each covisibility group. This process ensures that only the most informative and stable views are retained in the final database. The proposed GSDB framework is compatible with Gaussian Splatting-based maps and does not require additional geometry or reference supervision. It enables significant database compression while maintaining localization accuracy. Experimental results on the Replica dataset show that GSDB effectively reduces database redundancy, improves retrieval efficiency, and results in up to about 10% faster localization process than conventional baselines, while compressing the database size by up to 95%.
           </p>
         </div>
       </div>
@@ -352,69 +322,22 @@
 </section>
 <!-- End paper abstract -->
 
-
 <!-- Image carousel -->
+<!-- Single image section -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
+    <div class="container" style="max-width: 1000px;">
+      <div class="has-text-centered">
+        <!-- Your single image here -->
+        <img src="static/images/overview_pipeline.png" alt="A beautiful landscape"  width="90%"/>
+        <h2 class="custom-subtitle">
+          Our GSDB pipeline converts a dense Gaussian Splatting map into a compact, retrieval-friendly database in three main stages. First, we perform view filtering: all training viewpoints are rendered, and we discard views that are visually uninformative using pixel-wise gradient variance, then further reject views whose frustums observe only a small number of high-opacity Gaussians, ensuring that each retained image sees meaningful 3D structure. Second, from the remaining views we build a covisibility graph by connecting view pairs that share a sufficiently large set of visible Gaussians; each connected component of this graph defines a covisibility group that observes a similar region of the scene. Third, within each group we apply viewpoint ranking using two complementary scores: a no-reference perceptual quality metric (BRISQUE) to penalize blurred or artifact-ridden renderings, and our Edge-Aware Uncertainty Concentration (EUAC), which measures how uncertainty derived from Fisher Information is distributed along edges detected by DiffusionEdge. By selecting the top-ranked representative view from every covisibility group, GSDB preserves the most informative and structurally reliable viewpoints, achieving over 90% database compression while maintaining localization accuracy and improving overall retrieval and pose-estimation latency. 
         </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
 <!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
 
 
 <!-- Video carousel -->
@@ -427,21 +350,14 @@
           <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
             <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
+            <source src="static/videos/GSDB_replica_dataset.mp4" type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
             <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
+            <source src="static/videos/GSDB_cambridge_dataset.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -449,27 +365,6 @@
   </div>
 </section>
 <!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
 
 
 <!--BibTex citation -->
